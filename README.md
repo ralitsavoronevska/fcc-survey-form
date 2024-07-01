@@ -16,7 +16,7 @@
 
 # Built with:
 
-- HTML5, CSS3/SASS, Vanilla Javascript
+- HTML5, CSS3/SASS
 - [Google Fonts](https://fonts.google.com/)
 
 # Tools used:
