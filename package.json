@@ -1,0 +1,17 @@
+{
+  "name": "fcc-survey-form",
+  "version": "1.0.0",
+  "description": "freeCodeCamp Survey Form",
+  "main": "index.js",
+  "homepage": "http://ralitsavoronevska.github.io/fcc-survey-form",
+  "scripts": {
+    "sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "deploy": "gh-pages -d dist"
+  },
+  "author": "Ralitsa Voronevska",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^6.1.1",
+    "node-sass": "^9.0.0"
+  }
+}
