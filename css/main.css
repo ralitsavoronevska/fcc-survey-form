@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 :root {
-  --color-white: #f3f3f3;
   --color-black: #000000;
+  --color-white: #f3f3f3;
   --color-green: #37af65;
   --color-red: red; }
 
@@ -11,7 +10,7 @@
   box-sizing: border-box; }
 
 body {
-  font-family: "Roboto", "sans-serif";
+  font-family: system-ui, "sans-serif";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4;
