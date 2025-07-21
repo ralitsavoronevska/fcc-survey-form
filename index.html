@@ -31,6 +31,7 @@
     <!-- Preload Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="img/survey-form-background.jpeg" as="image" type="image/jpg">
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
@@ -40,7 +41,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
     </noscript>
   </head>
-  
+
   <body>
     <header id="header" class="pinning-header">
       <div class="pinning-header-container">
@@ -53,112 +54,112 @@
       </div>
     </header>
     <div class="container">
-      <h1 id="title" class="text-center">Netflix Survey</h1>
-      <p id="description" class="description text-center">Discover the world of Netflix through our engaging survey designed to capture user feedback and enhance the streaming experience.</p>
+      <div class="hero-container">
+        <h1 id="title" class="text-center">Netflix Survey</h1>
+        <p id="description" class="description text-center">Discover the world of Netflix through our engaging survey designed to capture user feedback and enhance the streaming experience.</p>
+      </div>
       <form id="survey-form">
         <div class="form-group">
-            <label for="name" id="name-label">Name</label>
-            <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" required>
+          <label for="name" id="name-label">Name</label>
+          <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="email" id="email-label">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control" required>
+          <label for="email" id="email-label">Email</label>
+          <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="number" id="number-label">Age</label>
-            <input type="number" name="number" id="number" placeholder="Age" class="form-control" min="18" max="100">
+          <label for="number" id="number-label">Age</label>
+          <input type="number" name="number" id="number" placeholder="Age" class="form-control" min="18" max="100">
         </div>
         <div class="form-group">
-            <p>Gender</p>
-            <label><input type="radio" name="user-gender" value="male" class="input-radio" checked>Male</label>
-            <label><input type="radio" name="user-gender" value="female" class="input-radio">Female</label>
+          <p>Gender</p>
+          <label><input type="radio" name="user-gender" value="male" class="input-radio" checked>Male</label>
+          <label><input type="radio" name="user-gender" value="female" class="input-radio">Female</label>
         </div>
         <div class="form-group">
-            <label>How often do you watch Netflix?</label>
-            <select id="dropdown" name="dropdown" class="form-control" required>
+          <label for="dropdown">How often do you watch Netflix?</label>
+          <select id="dropdown" name="dropdown" class="form-control" required>
             <option value disabled selected>Select usage frequency</option>
             <option value="every-day">Every day</option>
             <option value="a-few-times-a-week">A few times a week</option>
             <option value="rarely">Rarely</option>
-            </select>
+          </select>
         </div>
         <div class="form-group">
-            <p>Which genre do you prefer on Netflix? (Check all that apply)</p>
-            <label><input type="checkbox" name="prefer" value="action" class="input-checkbox">Action</label>
-            <label><input type="checkbox" name="prefer" value="comedy" class="input-checkbox">Comedy</label>                
-            <label><input type="checkbox" name="prefer" value="drama" class="input-checkbox">Drama</label>
-            <label><input type="checkbox" name="prefer" value="documentary" class="input-checkbox">Documentary</label>
-            <label><input type="checkbox" name="prefer" value="horror" class="input-checkbox">Horror</label>
-            <label><input type="checkbox" name="prefer" value="sci-fi" class="input-checkbox">Sci-Fi</label>
+          <p>Which genre do you prefer on Netflix? (Check all that apply)</p>
+          <label><input type="checkbox" name="prefer" value="action" class="input-checkbox">Action</label>
+          <label><input type="checkbox" name="prefer" value="comedy" class="input-checkbox">Comedy</label>                
+          <label><input type="checkbox" name="prefer" value="drama" class="input-checkbox">Drama</label>
+          <label><input type="checkbox" name="prefer" value="documentary" class="input-checkbox">Documentary</label>
+          <label><input type="checkbox" name="prefer" value="horror" class="input-checkbox">Horror</label>
+          <label><input type="checkbox" name="prefer" value="sci-fi" class="input-checkbox">Sci-Fi</label>
         </div>
         <div class="form-group">
-            <label>How satisfied are you with the Netflix content?</label>
-            <select id="satisfaction" name="satisfaction" class="form-control" required>
+          <label for="satisfaction">How satisfied are you with the Netflix content?</label>
+          <select id="satisfaction" name="satisfaction" class="form-control" required>
             <option value disabled selected>Select satisfaction level</option>
             <option value="very-satisfied">Very satisfied</option>
             <option value="satisfied">Satisfied</option>
             <option value="neutral">Neutral</option>
             <option value="dissatisfied">Dissatisfied</option>
             <option value="very-dissatisfied">Very dissatisfied</option>
-            </select>
+          </select>
         </div>
         <div class="form-group">
-            <p>Do you share your Netflix account with others?</p>
-            <label><input type="radio" name="user-sharing-account" value="yes" class="input-radio" checked>Yes</label>
-            <label><input type="radio" name="user-sharing-account" value="no" class="input-radio">No</label>
+          <p>Do you share your Netflix account with others?</p>
+          <label><input type="radio" name="user-sharing-account" value="yes" class="input-radio" checked>Yes</label>
+          <label><input type="radio" name="user-sharing-account" value="no" class="input-radio">No</label>
         </div>
         <div class="form-group">
-            <p>Have you ever canceled your Netflix subscription?</p>
-            <label><input type="radio" name="user-canceled-subscription" value="yes" class="input-radio">Yes</label>
-            <label><input type="radio" name="user-canceled-subscription" value="no" class="input-radio" checked>No</label>
+          <p>Have you ever canceled your Netflix subscription?</p>
+          <label><input type="radio" name="user-canceled-subscription" value="yes" class="input-radio">Yes</label>
+          <label><input type="radio" name="user-canceled-subscription" value="no" class="input-radio" checked>No</label>
         </div>
         <div class="form-group">
-            <p>Which device do you use to watch Netflix most often? (Check all that apply)</p>
-            <label><input type="checkbox" name="prefer" value="smartphone" class="input-checkbox">Smartphone</label>
-            <label><input type="checkbox" name="prefer" value="tablet" class="input-checkbox">Tablet</label>                
-            <label><input type="checkbox" name="prefer" value="laptop" class="input-checkbox">Laptop</label>
-            <label><input type="checkbox" name="prefer" value="smart-tv" class="input-checkbox">Smart TV</label>
-            <label><input type="checkbox" name="prefer" value="gaming-console" class="input-checkbox">Gaming console</label>
+          <p>Which device do you use to watch Netflix most often? (Check all that apply)</p>
+          <label><input type="checkbox" name="prefer" value="smartphone" class="input-checkbox">Smartphone</label>
+          <label><input type="checkbox" name="prefer" value="tablet" class="input-checkbox">Tablet</label>                
+          <label><input type="checkbox" name="prefer" value="laptop" class="input-checkbox">Laptop</label>
+          <label><input type="checkbox" name="prefer" value="smart-tv" class="input-checkbox">Smart TV</label>
+          <label><input type="checkbox" name="prefer" value="gaming-console" class="input-checkbox">Gaming console</label>
         </div>
         <div class="form-group">
-            <p>What improvements would you like to see on Netflix?</p>
-            <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+          <p>What improvements would you like to see on Netflix?</p>
+          <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
         </div>
         <div class="form-group">
-            <label>How likely are you to recommend Netflix to a friend?</label>
-            <select id="user-recommend" name="user-recommend" class="form-control" required>
+          <label for="user-recommend">How likely are you to recommend Netflix to a friend?</label>
+          <select id="user-recommend" name="user-recommend" class="form-control" required>
             <option value disabled selected>Select satisfaction level</option>
             <option value="very-likely">Very likely</option>
             <option value="likely">Likely</option>
             <option value="neutral">Neutral</option>
             <option value="unlikely">Unlikely</option>
-            <option value="very-unlikely">Very unlikely/option>
-            </select>
+            <option value="very-unlikely">Very unlikely</option>
+          </select>
         </div>
         <div class="form-group">
-            <p>Which original Netflix series do you enjoy the most (Check all that apply)</p>
-            <label><input type="checkbox" name="favorite-series" value="stranger-things" class="input-checkbox">Stranger Things</label>
-            <label><input type="checkbox" name="favorite-series" value="the-crown" class="input-checkbox">The Crown</label>
-            <label><input type="checkbox" name="favorite-series" value="black-mirror" class="input-checkbox">Black Mirror</label>
-            <label><input type="checkbox" name="favorite-series" value="money-heist" class="input-checkbox">Money Heist</label>
-            <label><input type="checkbox" name="favorite-series" value="orange-is-the-new-black" class="input-checkbox">Orange is the New Black</label>
-            <label><input type="checkbox" name="favorite-series" value="other" class="input-checkbox">Other</label>
+          <p>Which original Netflix series do you enjoy the most (Check all that apply)</p>
+          <label><input type="checkbox" name="favorite-series" value="stranger-things" class="input-checkbox">Stranger Things</label>
+          <label><input type="checkbox" name="favorite-series" value="the-crown" class="input-checkbox">The Crown</label>
+          <label><input type="checkbox" name="favorite-series" value="black-mirror" class="input-checkbox">Black Mirror</label>
+          <label><input type="checkbox" name="favorite-series" value="money-heist" class="input-checkbox">Money Heist</label>
+          <label><input type="checkbox" name="favorite-series" value="orange-is-the-new-black" class="input-checkbox">Orange is the New Black</label>
+          <label><input type="checkbox" name="favorite-series" value="other" class="input-checkbox">Other</label>
         </div>
         <div class="form-group">
-            <label>What was the main reason you subscribed to Netflix?</label>
-            <select id="user-subscription-reason" name="user-subscription-reason" class="form-control" required>
+          <label for="user-subscription-reason">What was the main reason you subscribed to Netflix?</label>
+          <select id="user-subscription-reason" name="user-subscription-reason" class="form-control" required>
             <option value disabled selected>Select subscription reason</option>
             <option value="original-content">Original content</option>
             <option value="movie-selection">Movie selection</option>
             <option value="tv-show-selection">TV show selection</option>
             <option value="price">Price</option>
             <option value="recommendation">Recommendation</option>
-            </select>
+          </select>
         </div>
         <div class="form-group">
-            <button type="submit" id="submit" class="submit-button">
-            Submit
-            </button>
+          <button type="submit" id="submit" class="submit-button">Submit</button>
         </div>
       </form>
     </div>
