@@ -29,8 +29,19 @@
     <link rel="apple-touch-icon" href="img/favicon.png">
 
     <!-- Preload Google Font -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="img/img-1-small.jpg" as="image" type="image/webp" media="(max-width: 575px)">
+    <link rel="preload" href="img/img-1-medium.jpg" as="image" type="image/webp" media="(min-width: 576px)">
+    <link rel="preload" href="img/img-1-large.jpg" as="image" type="image/webp" media="(min-width: 1280px)">
+    <link rel="preload" href="img/img-2-small.jpg" as="image" type="image/webp" media="(max-width: 575px)">
+    <link rel="preload" href="img/img-2-medium.jpg" as="image" type="image/webp" media="(min-width: 576px)">
+    <link rel="preload" href="img/img-2-large.jpg" as="image" type="image/webp" media="(min-width: 1280px)">
+    <link rel="preload" href="img/img-3-small.jpg" as="image" type="image/webp" media="(max-width: 575px)">
+    <link rel="preload" href="img/img-3-medium.jpg" as="image" type="image/webp" media="(min-width: 576px)">
+    <link rel="preload" href="img/img-3-large.jpg" as="image" type="image/webp" media="(min-width: 1280px)">
 
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
@@ -61,7 +72,7 @@
         <form id="survey-form">
           <div class="form-group">
             <label for="name" id="name-label">Name</label>
-            <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" required>
+            <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" autocomplete="off" required>
           </div>
           <div class="form-group">
             <label for="email" id="email-label">Email</label>
