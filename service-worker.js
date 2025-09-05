@@ -3,11 +3,20 @@ self.addEventListener('install', event => {
     caches.open('fcc-survey-form-v1').then(cache => {
       return cache.addAll([
         '/',
-        '/dist/index.html',
+        '/index.html',
         '/css/styles.css',
         '/img/favicon.png',
         '/img/favicon.ico',
-        // Add other assets you want to cache
+        '/img/fcc-survey-form-desktop-preview.png',
+        '/img/img-1-small.jpg',
+        '/img/img-1-medium.jpg',
+        '/img/img-1-large.jpg',
+        '/img/img-2-small.jpg',
+        '/img/img-2-medium.jpg',
+        '/img/img-2-large.jpg',
+        '/img/img-3-small.jpg',
+        '/img/img-3-medium.jpg',
+        '/img/img-3-large.jpg'
       ]);
     })
   );
