@@ -26,8 +26,8 @@
     <meta name="twitter:image" content="https://ralitsataylor.github.io/fcc-survey-form/dist/img/fcc-survey-form-desktop-preview.png">
 
     <!-- Icons -->
-    <link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/png" sizes="64x64" href="img/favicon.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="48x48" href="img/favicon.ico">
 
     <!-- Preload Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -180,5 +180,12 @@
         <p><a href="http://ralitsataylor.github.io/modern-portfolio/" target="_blank" rel="noopener">&lt;Ralitsa Taylor/&gt;</a> <span>© 2025</span></p>
       </footer>
     </div>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+      }
+    </script>
+
   </body>
 </html>
