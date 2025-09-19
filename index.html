@@ -77,8 +77,15 @@
         width: 100%;
         position: relative;
         margin: 3.125rem auto 0 auto;
-        @media (min-width: 576px) {
-          max-width: 33.75rem; /* 540px */
+      }
+      @media (min-width: 576px) {
+        .container {
+          max-width: 33.75rem;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 45rem;
         }
       }
       .hero-container {
