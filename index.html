@@ -31,9 +31,9 @@
 
     <!-- Preload Google Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v23/pxiDyp8kv8JHgFVrJJLmv1pVF9eOYktMqg.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v23/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmv1pVF9eOYktMqg.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@200;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- Preload background images -->
     <link rel="preload" href="img/img-1-small.jpg" as="image" type="image/jpeg" media="(max-width: 575px)" fetchpriority="high">
@@ -41,11 +41,78 @@
     <link rel="preload" href="img/img-1-large.jpg" as="image" type="image/jpeg" media="(min-width: 1280px)" fetchpriority="high">
 
     <!-- Main stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Inline critical CSS for .main and above-the-fold content -->
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        font-display: swap;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #f3f3f3;
+        margin: 0;
+        background-color: #000;
+      }
+      .main {
+        position: relative;
+        background-size: 100vh;
+        background-position: top, top center, center center, bottom center;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('../img/img-1-small.jpg'), url('../img/img-1-small.jpg'), url('../img/img-1-small.jpg');
+        min-height: 100vh;
+      }
+      @media (min-width: 576px) {
+        .main {
+          background-size: 163vh !important;
+          background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('../img/img-1-medium.jpg'), url('../img/img-1-medium.jpg'), url('../img/img-1-medium.jpg');
+        }
+      }
+      @media (min-width: 1280px) {
+        .main {
+          background-size: auto !important;
+          background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('../img/img-1-large.jpg'), url('../img/img-1-large.jpg'), url('../img/img-1-large.jpg');
+        }
+      }
+      .container {
+        width: 100%;
+        position: relative;
+        margin: 3.125rem auto 0 auto;
+        @media (min-width: 576px) {
+          max-width: 33.75rem; /* 540px */
+        }
+      }
+      .hero-container {
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #000;
+        background-color: rgba(0,0,0,.5);
+        border-radius: .5rem;
+      }
+      h1.text-center {
+        font-weight: 400;
+        line-height: 1.2;
+      }
+      p.text-center {
+        font-size: 1.125rem;
+        font-style: italic;
+        font-weight: 200;
+        text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+        padding: 0 .375rem;
+      }
+      h1.text-center, p.text-center {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+      }
+    </style>
+
+    <!-- Preload main stylesheet for non-critical CSS -->
+    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- noscript fallbacks -->
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@200;400&display=swap">
+      <link rel="stylesheet" href="css/styles.css">
     </noscript>
   </head>
 
@@ -57,8 +124,7 @@
         <div class="pinning-header-container">
           <div class="main-header">
             <a href="#" class="logo-link" aria-label="Netflix">
-              <svg class="n-logo" viewBox="225 0 552 1000"><defs><radialGradient id=":r0:-a" r="75%" gradientTransform="matrix(.38 0 .5785 1 .02 0)"><stop offset="60%" stop-opacity=".3"></stop><stop offset="90%" stop-opacity=".05"></stop><stop offset="100%" stop-opacity="0"></stop></radialGradient></defs><path d="M225 0v1000c60-8 138-14 198-17V0H225" fill="#b1060e"></path><path d="M579 0v983c71 3 131 9 198 17V0H579" fill="#b1060e"></path><path d="M225 0v200l198 600V557l151 426c76 3 136 9 203 17V800L579 200v240L423 0H225" fill="url(#:r0:-a)"></path><path d="M225 0l349 983c76 3 136 9 203 17L423 0H225" fill="#e50914"></path></svg>  
-              <svg viewBox="0 0 111 30" class="netflix-logo"><g id="netflix-logo"><path d="M105.06233,14.2806261 L110.999156,30 C109.249227,29.7497422 107.500234,29.4366857 105.718437,29.1554972 L102.374168,20.4686475 L98.9371075,28.4375293 C97.2499766,28.1563408 95.5928391,28.061674 93.9057081,27.8432843 L99.9372012,14.0931671 L94.4680851,-5.68434189e-14 L99.5313525,-5.68434189e-14 L102.593495,7.87421502 L105.874965,-5.68434189e-14 L110.999156,-5.68434189e-14 L105.06233,14.2806261 Z M90.4686475,-5.68434189e-14 L85.8749649,-5.68434189e-14 L85.8749649,27.2499766 C87.3746368,27.3437061 88.9371075,27.4055675 90.4686475,27.5930265 L90.4686475,-5.68434189e-14 Z M81.9055207,26.93692 C77.7186241,26.6557316 73.5307901,26.4064111 69.250164,26.3117443 L69.250164,-5.68434189e-14 L73.9366389,-5.68434189e-14 L73.9366389,21.8745899 C76.6248008,21.9373887 79.3120255,22.1557784 81.9055207,22.2804387 L81.9055207,26.93692 Z M64.2496954,10.6561065 L64.2496954,15.3435186 L57.8442216,15.3435186 L57.8442216,25.9996251 L53.2186709,25.9996251 L53.2186709,-5.68434189e-14 L66.3436123,-5.68434189e-14 L66.3436123,4.68741213 L57.8442216,4.68741213 L57.8442216,10.6561065 L64.2496954,10.6561065 Z M45.3435186,4.68741213 L45.3435186,26.2498828 C43.7810479,26.2498828 42.1876465,26.2498828 40.6561065,26.3117443 L40.6561065,4.68741213 L35.8121661,4.68741213 L35.8121661,-5.68434189e-14 L50.2183897,-5.68434189e-14 L50.2183897,4.68741213 L45.3435186,4.68741213 Z M30.749836,15.5928391 C28.687787,15.5928391 26.2498828,15.5928391 24.4999531,15.6875059 L24.4999531,22.6562939 C27.2499766,22.4678976 30,22.2495079 32.7809542,22.1557784 L32.7809542,26.6557316 L19.812541,27.6876933 L19.812541,-5.68434189e-14 L32.7809542,-5.68434189e-14 L32.7809542,4.68741213 L24.4999531,4.68741213 L24.4999531,10.9991564 C26.3126816,10.9991564 29.0936358,10.9054269 30.749836,10.9054269 L30.749836,15.5928391 Z M4.78114163,12.9684132 L4.78114163,29.3429562 C3.09401069,29.5313525 1.59340144,29.7497422 0,30 L0,-5.68434189e-14 L4.4690224,-5.68434189e-14 L10.562377,17.0315868 L10.562377,-5.68434189e-14 L15.2497891,-5.68434189e-14 L15.2497891,28.061674 C13.5935889,28.3437998 11.906458,28.4375293 10.1246602,28.6868498 L4.78114163,12.9684132 Z" id="Fill-14"></path></g></svg>
+              <svg class="n-logo" viewBox="225 0 552 1000"><defs><radialGradient id="a" r="75%" gradientTransform="matrix(.38 0 .5785 1 .02 0)"><stop offset="60%" stop-opacity=".3"/><stop offset="90%" stop-opacity=".05"/><stop offset="100%" stop-opacity="0"/></radialGradient></defs><path d="M225 0v1000c60-8 138-14 198-17V0zm354 0v983c71 3 131 9 198 17V0z" fill="#b1060e"/><path d="M225 0v200l198 600V557l151 426c76 3 136 9 203 17V800L579 200v240L423 0z" fill="url(#a)"/><path d="m225 0 349 983c76 3 136 9 203 17L423 0z" fill="#e50914"/></svg><svg viewBox="0 0 111 30" class="netflix-logo"><path d="M105.062 14.28 111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h5.124zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.688.062 5.375.28 7.969.405zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97zm-18.906-5.97V26.25c-1.563 0-3.156 0-4.688.062V4.687h-4.844V0h14.406v4.687zM30.75 15.593c-2.062 0-4.5 0-6.25.095v6.968c2.75-.188 5.5-.406 8.281-.5v4.5l-12.968 1.032V0H32.78v4.687H24.5V11c1.813 0 4.594-.094 6.25-.094zM4.78 12.968v16.375A105 105 0 0 0 0 30V0h4.469l6.093 17.032V0h4.688v28.062c-1.656.282-3.344.376-5.125.625z"/></svg>
             </a>
           </div>
         </div>
