@@ -40,7 +40,6 @@
     <link rel="preload" href="img/img-1-medium.jpg" as="image" type="image/jpeg" media="(min-width: 576px) and (max-width: 1279px)" fetchpriority="high">
     <link rel="preload" href="img/img-1-large.jpg" as="image" type="image/jpeg" media="(min-width: 1280px)" fetchpriority="high">
 
-    <!-- Main stylesheet -->
     <!-- Inline critical CSS for .main and above-the-fold content -->
     <style>
       body {
@@ -113,8 +112,8 @@
       }
     </style>
 
-    <!-- Preload main stylesheet for non-critical CSS -->
-    <link rel="preload" href="css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
 
     <!-- noscript fallbacks -->
     <noscript>
