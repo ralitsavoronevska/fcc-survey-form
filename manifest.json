@@ -1,0 +1,25 @@
+{
+  "name": "FCC: Build a Survey Form",
+  "short_name": "SurveyForm",
+  "start_url": "./",
+  "description": "FCC: Build a Survey Form",
+  "author": "Ralitsa Voronevska",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#e50914",
+  "icons": [
+    {
+      "src": "img/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "img/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon",
+      "purpose": "apple touch icon"
+    }
+  ],
+  "canonical_url": "https://ralitsavoronevska.github.io/fcc-survey-form/",
+  "screenshot": "https://ralitsavoronevska.github.io/fcc-survey-form/dist/img/fcc-survey-form-desktop-preview.png"
+}
