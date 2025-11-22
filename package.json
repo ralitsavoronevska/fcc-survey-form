@@ -1,0 +1,25 @@
+{
+  "name": "fcc-survey-form",
+  "version": "1.0.0",
+  "description": "FCC: Build a Survey Form",
+  "main": "index.js",
+  "homepage": "http://ralitsavoronevska.github.io/fcc-survey-form/",
+  "scripts": {
+    "scss": "sass --watch --style=compressed --no-source-map scss/:dist/css/",
+    "deploy": "gh-pages -d dist"
+  },
+  "keywords": [
+    "HTML5",
+    "CSS3",
+    "SCSS",
+    "Responsiveness",
+    "Transitions",
+    "Flex Layout"
+  ],
+  "author": "Ralitsa Voronevska",
+  "license": "MIT",
+  "dependencies": {
+    "gh-pages": "^6.3.0",
+    "sass": "^1.89.2"
+  }
+}
