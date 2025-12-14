@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCC: Build a Survey Form</title>
+    <meta name="theme-color" content="#e50914">
+    <meta name="description" content="FCC: Build a Survey Form">
+    <link rel="canonical" href="https://ralitsavoronevska.github.io/fcc-survey-form/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ralitsavoronevska.github.io/fcc-survey-form/">
+    <meta property="og:title" content="FCC: Build a Survey Form">
+    <meta property="og:description" content="FCC: Build a Survey Form">
+    <meta property="og:image" content="https://ralitsavoronevska.github.io/fcc-survey-form/dist/img/fcc-survey-form-desktop-preview.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ralitsavoronevska.github.io/fcc-survey-form/">
+    <meta name="twitter:title" content="FCC: Build a Survey Form">
+    <meta name="twitter:description" content="FCC: Build a Survey Form">
+    <meta name="twitter:image" content="https://ralitsavoronevska.github.io/fcc-survey-form/dist/img/fcc-survey-form-desktop-preview.png">
+
+    <!-- Icons -->
+    <link rel="shortcut icon" type="image/png" sizes="64x64" href="img/favicon.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="48x48" href="img/favicon.ico">
+
+    <!-- Preload Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiDyp8kv8JHgFVrJJLmv1pVF9eOYktMqg.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,200;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- Preload background image -->
+    <link rel="preload" href="img/img-1-small.jpg" as="image" type="image/jpeg" media="(max-width: 575px)" fetchpriority="high">
+
+    <!-- Inline critical CSS for .main and LCP elements -->
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #f3f3f3;
+        margin: 0;
+        background-color: #000;
+      }
+      .main {
+        position: relative;
+        background-size: 100vh;
+        background-position: top, top center, center center, bottom center;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+        background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('img/img-1-small.jpg'), url('img/img-1-small.jpg'), url('img/img-1-small.jpg');
+        min-height: 100vh;
+      }
+      @media (min-width: 576px) {
+        .main {
+          background-size: 163vh !important;
+          background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('img/img-1-medium.jpg'), url('img/img-1-medium.jpg'), url('img/img-1-medium.jpg');
+        }
+      }
+      @media (min-width: 1280px) {
+        .main {
+          background-size: auto !important;
+          background-image: linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.8)), url('img/img-1-large.jpg'), url('img/img-1-large.jpg'), url('img/img-1-large.jpg');
+        }
+      }
+      .container {
+        width: 100%;
+        position: relative;
+        margin: 3.125rem auto 0 auto;
+      }
+      @media (min-width: 576px) {
+        .container {
+          max-width: 33.75rem;
+        }
+      }
+      @media (min-width: 768px) {
+        .container {
+          max-width: 45rem;
+        }
+      }
+      .hero-container {
+        padding-top: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #000;
+        background-color: rgba(0,0,0,.5);
+        border-radius: .5rem;
+      }
+      h1.text-center {
+        font-weight: 400;
+        line-height: 1.2;
+      }
+      p.text-center {
+        font-size: 1.125rem;
+        font-style: italic;
+        font-weight: 200;
+        text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+        padding: 0 .375rem;
+      }
+      h1.text-center, p.text-center {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+      }
+    </style>
+
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- noscript fallbacks -->
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,200;1,400&display=swap">
+    </noscript>
+  </head>
+
+  <body>
+
+    <div class="main">
+      
+      <header id="header" class="pinning-header">
+        <div class="pinning-header-container">
+          <div class="main-header">
+            <a href="#" class="logo-link" aria-label="Netflix">
+              <svg class="n-logo" viewBox="225 0 552 1000"><defs><radialGradient id="a" r="75%" gradientTransform="matrix(.38 0 .5785 1 .02 0)"><stop offset="60%" stop-opacity=".3"/><stop offset="90%" stop-opacity=".05"/><stop offset="100%" stop-opacity="0"/></radialGradient></defs><path d="M225 0v1000c60-8 138-14 198-17V0zm354 0v983c71 3 131 9 198 17V0z" fill="#b1060e"/><path d="M225 0v200l198 600V557l151 426c76 3 136 9 203 17V800L579 200v240L423 0z" fill="url(#a)"/><path d="m225 0 349 983c76 3 136 9 203 17L423 0z" fill="#e50914"/></svg><svg viewBox="0 0 111 30" class="netflix-logo"><path d="M105.062 14.28 111 30c-1.75-.25-3.499-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.874L105.875 0h5.124zM90.47 0h-4.594v27.25c1.5.094 3.062.156 4.594.343zm-8.563 26.937c-4.187-.281-8.375-.53-12.656-.625V0h4.687v21.875c2.688.062 5.375.28 7.969.405zM64.25 10.657v4.687h-6.406V26H53.22V0h13.125v4.687h-8.5v5.97zm-18.906-5.97V26.25c-1.563 0-3.156 0-4.688.062V4.687h-4.844V0h14.406v4.687zM30.75 15.593c-2.062 0-4.5 0-6.25.095v6.968c2.75-.188 5.5-.406 8.281-.5v4.5l-12.968 1.032V0H32.78v4.687H24.5V11c1.813 0 4.594-.094 6.25-.094zM4.78 12.968v16.375A105 105 0 0 0 0 30V0h4.469l6.093 17.032V0h4.688v28.062c-1.656.282-3.344.376-5.125.625z"/></svg>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+        <div class="hero-container">
+          <h1 id="title" class="text-center">Netflix Survey</h1>
+          <p id="description" class="description text-center">Discover the world of Netflix through our engaging survey designed to capture user feedback and enhance the streaming experience.</p>
+        </div>
+        <form id="survey-form">
+          <div class="form-group">
+            <label for="name" id="name-label">Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" class="form-control" autocomplete="off" required>
+          </div>
+          <div class="form-group">
+            <label for="email" id="email-label">Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" class="form-control" autocomplete="off" pattern="/^[a-zA-Z0-9.!#$%&’*+ /=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" required>
+          </div>
+          <div class="form-group">
+            <label for="number" id="number-label">Age</label>
+            <input type="number" name="number" id="number" placeholder="Age" class="form-control" min="18" max="100">
+          </div>
+          <div class="form-group">
+            <p>Gender</p>
+            <label><input type="radio" name="user-gender" value="male" class="input-radio" checked>Male</label>
+            <label><input type="radio" name="user-gender" value="female" class="input-radio">Female</label>
+          </div>
+          <div class="form-group">
+            <label for="dropdown">How often do you watch Netflix?</label>
+            <select id="dropdown" name="dropdown" class="form-control" required>
+              <option value disabled selected>Select usage frequency</option>
+              <option value="every-day">Every day</option>
+              <option value="a-few-times-a-week">A few times a week</option>
+              <option value="rarely">Rarely</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Which genre do you prefer on Netflix? (Check all that apply)</p>
+            <label><input type="checkbox" name="prefer" value="action" class="input-checkbox">Action</label>
+            <label><input type="checkbox" name="prefer" value="comedy" class="input-checkbox">Comedy</label>                
+            <label><input type="checkbox" name="prefer" value="drama" class="input-checkbox">Drama</label>
+            <label><input type="checkbox" name="prefer" value="documentary" class="input-checkbox">Documentary</label>
+            <label><input type="checkbox" name="prefer" value="horror" class="input-checkbox">Horror</label>
+            <label><input type="checkbox" name="prefer" value="sci-fi" class="input-checkbox">Sci-Fi</label>
+          </div>
+          <div class="form-group">
+            <label for="satisfaction">How satisfied are you with the Netflix content?</label>
+            <select id="satisfaction" name="satisfaction" class="form-control" required>
+              <option value disabled selected>Select satisfaction level</option>
+              <option value="very-satisfied">Very satisfied</option>
+              <option value="satisfied">Satisfied</option>
+              <option value="neutral">Neutral</option>
+              <option value="dissatisfied">Dissatisfied</option>
+              <option value="very-dissatisfied">Very dissatisfied</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Do you share your Netflix account with others?</p>
+            <label><input type="radio" name="user-sharing-account" value="yes" class="input-radio" checked>Yes</label>
+            <label><input type="radio" name="user-sharing-account" value="no" class="input-radio">No</label>
+          </div>
+          <div class="form-group">
+            <p>Have you ever canceled your Netflix subscription?</p>
+            <label><input type="radio" name="user-canceled-subscription" value="yes" class="input-radio">Yes</label>
+            <label><input type="radio" name="user-canceled-subscription" value="no" class="input-radio" checked>No</label>
+          </div>
+          <div class="form-group">
+            <p>Which device do you use to watch Netflix most often? (Check all that apply)</p>
+            <label><input type="checkbox" name="prefer" value="smartphone" class="input-checkbox">Smartphone</label>
+            <label><input type="checkbox" name="prefer" value="tablet" class="input-checkbox">Tablet</label>                
+            <label><input type="checkbox" name="prefer" value="laptop" class="input-checkbox">Laptop</label>
+            <label><input type="checkbox" name="prefer" value="smart-tv" class="input-checkbox">Smart TV</label>
+            <label><input type="checkbox" name="prefer" value="gaming-console" class="input-checkbox">Gaming console</label>
+          </div>
+          <div class="form-group">
+            <p>What improvements would you like to see on Netflix?</p>
+            <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="user-recommend">How likely are you to recommend Netflix to a friend?</label>
+            <select id="user-recommend" name="user-recommend" class="form-control" required>
+              <option value disabled selected>Select satisfaction level</option>
+              <option value="very-likely">Very likely</option>
+              <option value="likely">Likely</option>
+              <option value="neutral">Neutral</option>
+              <option value="unlikely">Unlikely</option>
+              <option value="very-unlikely">Very unlikely</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Which original Netflix series do you enjoy the most (Check all that apply)</p>
+            <label><input type="checkbox" name="favorite-series" value="stranger-things" class="input-checkbox">Stranger Things</label>
+            <label><input type="checkbox" name="favorite-series" value="the-crown" class="input-checkbox">The Crown</label>
+            <label><input type="checkbox" name="favorite-series" value="black-mirror" class="input-checkbox">Black Mirror</label>
+            <label><input type="checkbox" name="favorite-series" value="money-heist" class="input-checkbox">Money Heist</label>
+            <label><input type="checkbox" name="favorite-series" value="orange-is-the-new-black" class="input-checkbox">Orange is the New Black</label>
+            <label><input type="checkbox" name="favorite-series" value="other" class="input-checkbox">Other</label>
+          </div>
+          <div class="form-group">
+            <label for="user-subscription-reason">What was the main reason you subscribed to Netflix?</label>
+            <select id="user-subscription-reason" name="user-subscription-reason" class="form-control" required>
+              <option value disabled selected>Select subscription reason</option>
+              <option value="original-content">Original content</option>
+              <option value="movie-selection">Movie selection</option>
+              <option value="tv-show-selection">TV show selection</option>
+              <option value="price">Price</option>
+              <option value="recommendation">Recommendation</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="submit" id="submit" class="submit-button">Submit</button>
+          </div>
+        </form>
+      </main>
+
+      <footer>
+        <p><a href="https://ralitsavoronevska.com/" target="_blank" rel="noopener">&lt;Ralitsa Voronevska/&gt;</a> <span>© 2025</span></p>
+      </footer>
+      
+    </div>
+
+  </body>
+</html>

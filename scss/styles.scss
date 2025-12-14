@@ -1,0 +1,198 @@
+/** global classes styling and variables definitions **/
+:root {
+  --white: #f3f3f3;
+  --red: #ac2028;
+  --netflix-red: #e50914;
+  --border-radius: .5rem;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+}
+
+*, *::before, *::after { 
+  box-sizing: border-box; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Main container styling */
+.main {
+  /* Header styling */
+  #header {
+    background-image: linear-gradient(180deg,rgba(0, 0, 0, .8000) .000%, rgba(0, 0, 0, .7889) 8.333%, rgba(0, 0, 0, .7556) 16.67%, rgba(0, 0, 0, .7000) 25.00%, rgba(0, 0, 0, .6222) 33.33%, rgba(0, 0, 0, .5222) 41.67%, rgba(0, 0, 0, .4000) 5.00%, rgba(0, 0, 0, .2778) 58.33%, rgba(0, 0, 0, .1778) 66.67%, rgba(0, 0, 0, .1) 75.00%, rgba(0, 0, 0, .04444) 83.33%, rgba(0, 0, 0, .01111) 91.67%, rgba(0, 0, 0, .000) 10.0%);
+    &.pinning-header {
+      z-index: 1;
+      height: auto;
+      min-height: 5rem; /* 80px */
+      .pinning-header-container {
+        z-index: 1;
+      }
+      .main-header {
+        z-index: 2;
+        height: 4.875rem; /* 78px */
+        padding: 0 .9375rem; /* 0 15px */
+        position: relative;
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        .logo {
+          margin-right: .3125rem; /* 5px */
+          text-decoration: none;
+          display: inline-block;
+          vertical-align: middle;
+          @media (min-width: 950px) {
+            font-size: 1.5625rem; /* 25px */
+          }
+          @media (min-width: 1150px) {
+            margin-right: 1.5625rem; /* 25px */
+          }
+        }
+      }
+    }
+    .logo-link {
+      width: 1.125rem; /* 18px */
+      height: 2rem; /* 32px */
+      fill: var(--netflix-red);
+      line-height: 2.5rem; /* 40px */
+      display: inline-block;
+      text-decoration: none;
+      vertical-align: middle;
+      .n-logo, .netflix-logo {
+        vertical-align: middle;
+      }
+      .n-logo {
+        width: 1.125rem; /* 18px */
+        height: 2rem; /* 32px */
+        display: block;
+        flex-shrink: 0;
+      }
+      .netflix-logo {
+        display: none;
+        width: 10.5rem; /* 168px */
+        height: 2.875rem; /* 46px */
+      }
+    }
+  }
+  .container {
+    /* Form styling */
+    form {
+      padding: .625rem; /* 10px */
+      border-radius: var(--border-radius);
+      background-color: black;
+      @media (min-width: 480px) {
+        padding: 2.5rem; /* 40px */
+      }
+      .form-group {
+        margin: 0 auto 1.25rem auto; /* 0 auto 20px auto */
+        padding: .25rem;
+        &:last-child {
+          margin-bottom: .25rem; /* 4px */
+        }
+        .form-control {
+          display: block;
+          width: 100%;
+          height: 2.375rem; /* 38px */
+          padding: .375rem .75rem; /* 6px 12px */
+          color: #495057;
+          background-color: var(--white);
+          background-clip: padding-box;
+          border: 1px solid black;
+          border-radius: var(--border-radius);
+          transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+          /* custom styles for the form's dropdowns focus state */
+          &:focus {
+            border-color: var(--netflix-red);
+            outline: 0;
+            box-shadow: 0 0 0 .2rem rgba(229, 9, 20, .25); /* 0 0 0 3.2px */
+          }
+        }
+        .input-textarea {
+          min-height: 7.5rem; /* 120px */
+          width: 100%;
+          padding: .625rem; /* 10px */
+          resize: vertical;
+          /* custom styles for the form's textareas focus state */
+          &:focus-visible {
+            outline: var(--netflix-red) auto 1px;
+          }
+        }
+        .submit-button {
+          display: block;
+          width: 100%;
+          padding: .75rem; /* 12px */
+          background: var(--red);
+          color: var(--white);
+          cursor: pointer;
+          border-radius: var(--border-radius);
+        }
+      }
+    }
+    label {
+      display: flex;
+      align-items: center;
+      font-size: 1.125rem; /* 18px */
+      margin-bottom: .5rem; /* 8px */
+      .input-radio, .input-checkbox {
+        display: inline-block;
+        margin-right: .625rem; /* 10px */
+        min-height: 1.25rem; /* 20px */
+        min-width: 1.25rem; /* 20px */
+        /* customizing the form's radio and checkbox accent-color */
+        accent-color: var(--netflix-red);
+      }
+    }
+    input, button, select, textarea {
+      margin: 0;
+      font-family: inherit;
+      font-size: inherit;
+      line-height: inherit;
+    }
+    button {
+      border: none;
+    }
+  }
+  /* Footer styling */
+  footer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: black;
+    p {
+      margin-bottom: 0;
+      color: var(--white);
+      a {
+        color: var(--white);
+        line-height: inherit;
+        &:hover {
+          color: var(--red);
+        }
+      }
+    }
+  }
+}
+
+/** media queries for responsive design **/
+@media (min-width: 768px) {
+  #header {
+    .logo-link {
+      width: 10.5rem; /* 168px */
+      height: 2.875rem; /* 46px */
+      .n-logo {
+        display: none !important;
+      }
+      .netflix-logo {
+        display: block !important;
+      }
+    }
+  }
+}
